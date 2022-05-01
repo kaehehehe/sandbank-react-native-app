@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
+import IconF from '@expo/vector-icons/Feather';
+import IconS from '@expo/vector-icons/SimpleLineIcons';
+
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import HomeScreen from './screens/Home';
@@ -21,8 +23,8 @@ const App = () => {
           screenOptions={() => ({
             tabBarActiveTintColor: 'black',
             tabBarInactiveTintColor: 'gray',
-            tabBarLabelStyle: { marginBottom: 10, fontSize: 14 },
-            tabBarStyle: { height: 70 },
+            tabBarLabelStyle: { marginBottom: 8, fontSize: 13 },
+            tabBarStyle: { height: 60 },
           })}
         >
           <Tab.Screen
@@ -31,7 +33,7 @@ const App = () => {
             options={{
               title: '홈',
               tabBarIcon: ({ color, size }) => (
-                <Ionicons name="ios-home" size={size} color={color} />
+                <IconF name="home" size={size} color={color} />
               ),
             }}
           />
@@ -41,11 +43,7 @@ const App = () => {
             options={{
               title: '투자',
               tabBarIcon: ({ color, size }) => (
-                <Ionicons
-                  name="trending-up-outline"
-                  size={size}
-                  color={color}
-                />
+                <IconF name="trending-up" size={size} color={color} />
               ),
             }}
           />
@@ -55,7 +53,7 @@ const App = () => {
             options={{
               title: '인포',
               tabBarIcon: ({ color, size }) => (
-                <Ionicons name="bar-chart-outline" size={size} color={color} />
+                <IconS name="chart" size={size} color={color} />
               ),
             }}
           />
@@ -65,7 +63,7 @@ const App = () => {
             options={{
               title: '설정',
               tabBarIcon: ({ color, size }) => (
-                <Ionicons name="settings-outline" size={size} color={color} />
+                <IconF name="settings" size={size} color={color} />
               ),
             }}
           />
