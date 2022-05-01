@@ -4,7 +4,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
-import OpinionScreen from '../Information/Opinion';
+import OpinionScreen from '../Information/Opinion/Opinion';
 import YoutubeScreen from '../Information/Youtube';
 import InsightScreen from '../Information/Insight';
 import QuizScreen from '../Information/Quiz';

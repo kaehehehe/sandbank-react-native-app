@@ -17,7 +17,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName={HomeScreen}
+          initialRouteName={InfoScreen}
           screenOptions={() => ({
             tabBarActiveTintColor: 'black',
             tabBarInactiveTintColor: 'gray',
