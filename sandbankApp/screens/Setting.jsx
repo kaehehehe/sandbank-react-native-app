@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 const Setting = () => {
   return (
     <View>
-      <Text>Setting Screen</Text>
+      <Text></Text>
     </View>
   );
 };

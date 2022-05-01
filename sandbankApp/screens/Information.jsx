@@ -63,13 +63,13 @@ const Information = () => {
       <Tab.Screen
         name="알쓸B잡"
         children={() => (
-          <OpinionScreen data={filterData('알쓸B잡', data?.data)} />
+          <OpinionScreen data={filterData('알쓸B잡', data.data)} />
         )}
       />
       <Tab.Screen
         name="유튜브"
         children={() => (
-          <YoutubeScreen data={filterData('유튜브', data?.data)} />
+          <YoutubeScreen data={filterData('유튜브', data.data)} />
         )}
       />
       <Tab.Screen
