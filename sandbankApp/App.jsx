@@ -8,7 +8,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import HomeScreen from './screens/Home';
 import InvestmentScreen from './screens/Investment';
-import InfoScreen from './screens/Information';
+import InfoScreen from './screens/Information/Information';
 import SettingScreen from './screens/Setting';
 
 const Tab = createBottomTabNavigator();
