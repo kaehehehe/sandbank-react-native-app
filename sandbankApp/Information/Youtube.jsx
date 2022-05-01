@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 const Youtube = ({ data }) => {
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
   });
   
   return (

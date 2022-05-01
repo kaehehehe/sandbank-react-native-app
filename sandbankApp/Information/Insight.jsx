@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 const Insight = ({data}) => {
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
   });
   
   return (
