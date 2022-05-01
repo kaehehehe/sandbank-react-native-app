@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 
-const Youtube = () => {
+const Youtube = ({ data }) => {
+  useEffect(() => {
+    console.log(data);
+  });
+  
   return (
     <View>
       <Text></Text>
