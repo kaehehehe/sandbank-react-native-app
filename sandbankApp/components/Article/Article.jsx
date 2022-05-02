@@ -26,7 +26,7 @@ const Article = ({ item }) => {
   };
 
   return (
-    <S.Container>
+    <S.Article>
       <Image source={{ uri: item.image }} style={{ width: 300, height: 180 }} />
       <S.Metadata>
         <S.UploadDate>{item.upload_date}</S.UploadDate>
@@ -39,7 +39,7 @@ const Article = ({ item }) => {
           </S.ShareWrapper>
         </S.Wrapper>
       </S.Metadata>
-    </S.Container>
+    </S.Article>
   );
 };
 

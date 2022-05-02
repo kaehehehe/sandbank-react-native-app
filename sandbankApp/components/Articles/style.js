@@ -24,7 +24,7 @@ export const Title = styled.Text`
 `;
 
 export const TypeWrapper = styled.View`
-  background-color: #669cfc;
+  background-color: ${({ color }) => color};
   padding: 5px 8px;
   border-radius: 8px;
 `;
@@ -33,4 +33,3 @@ export const Type = styled.Text`
   font-size: 14px;
   color: white;
 `;
-

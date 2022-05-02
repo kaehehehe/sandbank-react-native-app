@@ -1,17 +1,13 @@
-import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { ScrollView } from 'react-native';
 
-import * as S from './style';
+import Articles from '../../../../components/Articles';
 
 const Insight = ({ data }) => {
-  useEffect(() => {
-    // console.log(data);
-  });
-
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <ScrollView>
+      <Articles data={data} />
+    </ScrollView>
   );
 };
 
