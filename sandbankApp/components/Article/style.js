@@ -9,6 +9,7 @@ export const Metadata = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5px;
 `;
 
 export const UploadDate = styled.Text`
@@ -20,7 +21,12 @@ export const Wrapper = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 5px;
+`;
+
+export const LikeWrapper = styled.TouchableOpacity`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const LikeCnt = styled.Text`

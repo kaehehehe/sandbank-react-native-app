@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, Image, Share } from 'react-native';
 import HeartIcon from '@expo/vector-icons/FontAwesome';
 import ShareIcon from '@expo/vector-icons/Feather';
@@ -6,6 +6,14 @@ import ShareIcon from '@expo/vector-icons/Feather';
 import * as S from './style';
 
 const Article = ({ item }) => {
+  const [like, setLike] = useState(false);
+  const [likeCnt, setLikeCnt] = useState(item.like_cnt);
+
+  const onPressLike = () => {
+    setLike(!like);
+    setLikeCnt(likeCnt + 1);
+  };
+
   const onPressShare = async () => {
     try {
       const result = await Share.share({
@@ -31,8 +39,14 @@ const Article = ({ item }) => {
       <S.Metadata>
         <S.UploadDate>{item.upload_date}</S.UploadDate>
         <S.Wrapper>
-          <HeartIcon name="heart-o" size={18} color="#B1B1B3" />
-          <S.LikeCnt>{item.like_cnt}</S.LikeCnt>
+          <S.LikeWrapper onPress={onPressLike}>
+            {like ? (
+              <HeartIcon name="heart" size={18} color="red" />
+            ) : (
+              <HeartIcon name="heart-o" size={18} color="#B1B1B3" />
+            )}
+            <S.LikeCnt>{likeCnt}</S.LikeCnt>
+          </S.LikeWrapper>
           <S.ShareWrapper onPress={() => onPressShare(item)}>
             <ShareIcon name="share" size={18} color="#B1B1B3" />
             <Text>공유하기</Text>
