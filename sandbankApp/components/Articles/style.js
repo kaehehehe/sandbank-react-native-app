@@ -33,3 +33,11 @@ export const Type = styled.Text`
   font-size: 14px;
   color: white;
 `;
+
+export const ButtonWrapper = styled.View`
+  background-color: #f1f6ff;
+  width: 90%;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  padding: 3px 0;
+`;
