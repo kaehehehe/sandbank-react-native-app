@@ -1,14 +1,26 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, { useState } from 'react';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { Image, View } from 'react-native';
 
 import * as S from './style';
 
 const TopArticles = ({ content }) => {
-  const filterTopArticles = () => {
-    const result = content.filter((item) => item.like_top === 1);
-    return result;
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const renderItem = ({ item }) => {
+    return (
+      <View>
+        <Image
+          source={{ uri: item.image }}
+          style={{ width: 300, height: 180 }}
+        />
+        <S.ArticleTitleWrapper>
+          <S.ArticleTitle>{item.title}</S.ArticleTitle>
+        </S.ArticleTitleWrapper>
+      </View>
+    );
   };
-  
+
   return (
     <S.Container>
       <S.Header>
@@ -17,9 +29,16 @@ const TopArticles = ({ content }) => {
           <S.Type>New</S.Type>
         </S.TypeWrapper>
       </S.Header>
-      {filterTopArticles(content).map((item) => (
-        <Text key={item.id}>{item.id}</Text>
-      ))}
+      <Carousel
+        data={content}
+        renderItem={renderItem}
+        sliderWidth={300}
+        itemWidth={300}
+        onSnapToItem={(index) => setActiveSlide(index)}
+        loop
+        autoplay
+      />
+      <Pagination dotsLength={content.length} activeDotIndex={activeSlide} />
     </S.Container>
   );
 };

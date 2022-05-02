@@ -3,11 +3,12 @@ import { ScrollView } from 'react-native';
 
 import Articles from '../../../../components/Articles';
 import TopArticles from '../../../../components/TopArticles';
+import { filterTopArticles } from '../../../../utils/filterTopArticles';
 
 const Insight = ({ data }) => {
   return (
     <ScrollView>
-      <TopArticles content={data.content} />
+      <TopArticles content={filterTopArticles(data.content)} />
       <Articles data={data} />
     </ScrollView>
   );
