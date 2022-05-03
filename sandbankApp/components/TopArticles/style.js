@@ -48,3 +48,29 @@ export const Type = styled.Text`
   font-size: 14px;
   color: white;
 `;
+
+export const Pagination = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+export const Icons = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 20px;
+`;
+
+export const LikeWrapper = styled.TouchableOpacity`
+  display: flex;
+  margin-right: 20px;
+`;
+
+export const ShareWrapper = styled.TouchableOpacity`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;

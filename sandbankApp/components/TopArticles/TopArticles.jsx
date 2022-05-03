@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { Image, View } from 'react-native';
+import HeartIcon from '@expo/vector-icons/FontAwesome';
+import ShareIcon from '@expo/vector-icons/Feather';
 
 import * as S from './style';
 
 const TopArticles = ({ content }) => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [like, setLike] = useState(false);
 
   const renderItem = ({ item }) => {
     return (
@@ -38,7 +41,19 @@ const TopArticles = ({ content }) => {
         loop
         autoplay
       />
-      <Pagination dotsLength={content.length} activeDotIndex={activeSlide} />
+      <S.Pagination>
+        <Pagination dotsLength={content.length} activeDotIndex={activeSlide} />
+        <S.Icons>
+          <S.LikeWrapper onPress={() => setLike(!like)}>
+            {like ? (
+              <HeartIcon name="heart" size={30} color="red" />
+            ) : (
+              <HeartIcon name="heart-o" size={30} color="#B1B1B3" />
+            )}
+          </S.LikeWrapper>
+          <ShareIcon name="share" size={30} color="#B1B1B3" />
+        </S.Icons>
+      </S.Pagination>
     </S.Container>
   );
 };
