@@ -65,12 +65,5 @@ export const Icons = styled.View`
 `;
 
 export const LikeWrapper = styled.TouchableOpacity`
-  display: flex;
   margin-right: 20px;
-`;
-
-export const ShareWrapper = styled.TouchableOpacity`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 `;

@@ -8,7 +8,7 @@ import * as S from './style';
 const Article = ({ item }) => {
   const [like, setLike] = useState(false);
   const [likeCnt, setLikeCnt] = useState(item.like_cnt);
-  
+
   const onPressLike = () => {
     setLike(!like);
     setLikeCnt(likeCnt + 1);
@@ -52,7 +52,7 @@ const Article = ({ item }) => {
             )}
             <S.LikeCnt>{likeCnt}</S.LikeCnt>
           </S.LikeWrapper>
-          <S.ShareWrapper onPress={() => onPressShare(item)}>
+          <S.ShareWrapper onPress={() => onPressShare()}>
             <ShareIcon name="share" size={18} color="#B1B1B3" />
             <Text>공유하기</Text>
           </S.ShareWrapper>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import { Image, View } from 'react-native';
+import { Image, Linking, TouchableOpacity, View, Share } from 'react-native';
 import HeartIcon from '@expo/vector-icons/FontAwesome';
 import ShareIcon from '@expo/vector-icons/Feather';
 
@@ -13,15 +13,38 @@ const TopArticles = ({ content }) => {
   const renderItem = ({ item }) => {
     return (
       <View>
-        <Image
-          source={{ uri: item.image }}
-          style={{ width: 300, height: 180 }}
-        />
+        <TouchableOpacity
+          onPress={() => Linking.openURL(content[activeSlide].link)}
+        >
+          <Image
+            source={{ uri: item.image }}
+            style={{ width: 300, height: 180 }}
+          />
+        </TouchableOpacity>
         <S.ArticleTitleWrapper>
           <S.ArticleTitle>{item.title}</S.ArticleTitle>
         </S.ArticleTitleWrapper>
       </View>
     );
+  };
+
+  const onPressShare = async () => {
+    try {
+      const result = await Share.share({
+        message: content[activeSlide].link,
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          console.log('activityType!');
+        } else {
+          console.log('Share!');
+        }
+      } else if (result.action === Share.dismissedAction) {
+        console.log('dismissed');
+      }
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
@@ -38,8 +61,6 @@ const TopArticles = ({ content }) => {
         sliderWidth={300}
         itemWidth={300}
         onSnapToItem={(index) => setActiveSlide(index)}
-        loop
-        autoplay
       />
       <S.Pagination>
         <Pagination dotsLength={content.length} activeDotIndex={activeSlide} />
@@ -51,7 +72,9 @@ const TopArticles = ({ content }) => {
               <HeartIcon name="heart-o" size={30} color="#B1B1B3" />
             )}
           </S.LikeWrapper>
-          <ShareIcon name="share" size={30} color="#B1B1B3" />
+          <TouchableOpacity onPress={() => onPressShare()}>
+            <ShareIcon name="share" size={30} color="#B1B1B3" />
+          </TouchableOpacity>
         </S.Icons>
       </S.Pagination>
     </S.Container>
