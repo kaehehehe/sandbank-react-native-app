@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, Image, Share } from 'react-native';
+import { Text, Image, Share, Linking, TouchableOpacity } from 'react-native';
 import HeartIcon from '@expo/vector-icons/FontAwesome';
 import ShareIcon from '@expo/vector-icons/Feather';
 
@@ -8,7 +8,7 @@ import * as S from './style';
 const Article = ({ item }) => {
   const [like, setLike] = useState(false);
   const [likeCnt, setLikeCnt] = useState(item.like_cnt);
-
+  
   const onPressLike = () => {
     setLike(!like);
     setLikeCnt(likeCnt + 1);
@@ -35,7 +35,12 @@ const Article = ({ item }) => {
 
   return (
     <S.Article>
-      <Image source={{ uri: item.image }} style={{ width: 300, height: 180 }} />
+      <TouchableOpacity onPress={() => Linking.openURL(item.link)}>
+        <Image
+          source={{ uri: item.image }}
+          style={{ width: 300, height: 180 }}
+        />
+      </TouchableOpacity>
       <S.Metadata>
         <S.UploadDate>{item.upload_date}</S.UploadDate>
         <S.Wrapper>
