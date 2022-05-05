@@ -1,7 +1,9 @@
 import styled from 'styled-components/native';
 
 export const Article = styled.View`
+  width: 100%;
   margin-bottom: 20px;
+  padding: 0 15px;
 `;
 
 export const Metadata = styled.View`
@@ -9,7 +11,7 @@ export const Metadata = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 5px;
+  margin-top: -8px;
 `;
 
 export const UploadDate = styled.Text`

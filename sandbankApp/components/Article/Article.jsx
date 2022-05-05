@@ -38,7 +38,8 @@ const Article = ({ item }) => {
       <TouchableOpacity onPress={() => Linking.openURL(item.link)}>
         <Image
           source={{ uri: item.image }}
-          style={{ width: 300, height: 180 }}
+          resizeMode="contain"
+          style={{ width: '100%', height: 200 }}
         />
       </TouchableOpacity>
       <S.Metadata>
