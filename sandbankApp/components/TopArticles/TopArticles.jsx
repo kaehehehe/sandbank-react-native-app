@@ -63,7 +63,12 @@ const TopArticles = ({ content }) => {
         onSnapToItem={(index) => setActiveSlide(index)}
       />
       <S.Pagination>
-        <Pagination dotsLength={content.length} activeDotIndex={activeSlide} />
+        <Pagination
+          dotsLength={content.length}
+          activeDotIndex={activeSlide}
+          dotStyle={{ backgroundColor: '#2C7AFD' }}
+          inactiveDotScale={0.7}
+        />
         <S.Icons>
           <S.LikeWrapper onPress={() => setLike(!like)}>
             {like ? (
