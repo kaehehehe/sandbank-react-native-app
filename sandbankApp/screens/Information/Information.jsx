@@ -4,6 +4,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
+import * as S from './style';
 import OpinionScreen from './screens/Opinion';
 import YoutubeScreen from './screens/Youtube';
 import InsightScreen from './screens/Insight';
@@ -29,9 +30,9 @@ const Information = () => {
 
   if (isLoading) {
     return (
-      <View>
-        <Text>Loading...</Text>
-      </View>
+      <S.Loading>
+        <S.LoadingText>Loading...</S.LoadingText>
+      </S.Loading>
     );
   }
 
