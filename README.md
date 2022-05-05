@@ -1,6 +1,12 @@
 # sandbank-react-native-app
 
-<img src="https://user-images.githubusercontent.com/77221488/166964252-e3260b30-6901-4e50-a411-df6759f89b2d.gif" width="300" />
+## 결과물 gif
+
+<div display="flex">
+ <img src="https://user-images.githubusercontent.com/77221488/166964252-e3260b30-6901-4e50-a411-df6759f89b2d.gif" width="300" />
+  <img src="https://user-images.githubusercontent.com/77221488/166966445-e8f4c50e-b2ec-4a52-91dc-01f591ed93f6.gif" width="300" />
+</div>
+
 
 ## 기술스택
 - react native
